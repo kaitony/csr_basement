@@ -118,6 +118,68 @@ Each page follows a **Container + Block** structure:
 
 ---
 
+## Testing Strategy
+
+**Write tests that verify behavior, not implementation.**
+
+### Unit Tests (Vitest)
+
+- All utility functions must have tests
+- State stores are tested by behavior
+- Components are tested for key interactions only
+
+### Test Organization
+
+- Component tests: `components/__tests__/`
+- State tests: `states/__tests__/`
+- Utility tests: `lib/__tests__/`
+
+### Test Commands
+
+- `yarn test` - Run all tests
+- `yarn test:watch` - Watch mode
+- `yarn lint` - ESLint check
+
+### Testing Guidelines
+
+- New features require tests
+- Existing code changes must pass tests
+- Run `yarn test` before committing
+- Focus on edge cases and error paths
+
+---
+
+## Development Workflow
+
+**Follow a structured approach from design to deployment.**
+
+### Before Coding
+
+1. Define types in `/types` first
+2. Write API functions in `/utils` or `/lib`
+3. Write tests (TDD recommended)
+4. Start implementation
+
+### Component Development
+
+1. **Container**: State management and data fetching
+2. **Block**: Pure rendering components
+
+### Quality Checks
+
+- New features → write tests alongside
+- Code changes → verify tests pass
+- Before push → run `yarn test` and `yarn lint`
+
+### Development Commands
+
+- `yarn dev` - Dev server (HTTPS, Vite)
+- `yarn build` - Production build
+- `yarn serve` - Preview production build
+- `yarn lint` - ESLint check
+
+---
+
 ## Error Handling Best Practices
 
 - **Clear user messages** - Show meaningful errors to users
